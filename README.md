@@ -22,7 +22,7 @@ Create an webapp with multiple routes for viewing Cryptopunks using the Cryptopu
 
 ## Instructions
 
-- A boilerplate template is set up for you. Clone this repo and install necessary dependencies.
+- A boilerplate template is set up for you. Fork this repo and install necessary dependencies.
 - Graphql-codegen is set up to generate types for the subgraph. You can use the generated code to query the subgraph, located in `lib/client.ts`.
 - You are allowed to use any framework (ex. Next.js, Remix, or client-side routing) you want.
 - Use `wagmi` for blockchain interactions.

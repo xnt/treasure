@@ -1,4 +1,4 @@
-# Title: Cryptopunks Viewer Dapp
+# Cryptopunks Viewer Dapp
 
 ## Objective
 

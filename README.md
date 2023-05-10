@@ -2,32 +2,46 @@
 
 ## Objective
 
-Create an webapp with multiple routes for viewing Cryptopunks using the Cryptopunks Subgraph and the provided smart contract address.
+Create a web application that allows a user to view their Cryptopunks inventory
 
 ## Requirements
 
-1. Implement a Cryptopunks viewer UI using the Cryptopunks Subgraph.
-2. Display the wallet/inventory view for the user's owned Cryptopunks.
-3. Implement a punk detail view for each individual Cryptopunk. Attributes and images are available via subgraph, but for the sake of this exercise, please query from the smart contract provided: https://etherscan.io/address/0x16F5A35647D6F03D5D3da7b35409D65ba03aF3B2
+The web application should consist of two pages:
+
+### Inventory Page
+- Allows a user to connect their wallet to the application or manually input a wallet address in a text input field
+- Displays the Cryptopunk token IDs owned by the provided wallet address
+- Clicking on any of the token IDs directs the user to the Details Page
+
+### Details Page
+- Given a Cryptopunks token ID, the Details Page displays the image and attribute associated with that token.
 
 ## Nice to have
 
-- Filters (male/female)
-- Display the sales for the last 30 days
-- Display top punk owners
-- Wallet connection
-- Animations (preferably using framer-motion)
+- Inventory filters (male/female)
+- Animations (preferably using [`framer-motion`](https://github.com/framer/motion))
 
 ---
 
-## Instructions
+## Local Setup
+1. A boilerplate template is set up for you. Fork this repository and install necessary dependencies:
+```sh
+npm install
+```
+2. Copy the example environment file and fill in with your own variables (see `Instructions > Inventory Page` below for more info):
+```sh
+cp .env.sample .env
+```
+3. `graphql-codegen` is set up to generate types from the subgraph. You can use the client in `lib/client.ts` to query the subgraph after running code generation:
+```sh
+npm run codegen
+```
 
-- A boilerplate template is set up for you. Fork this repo and install necessary dependencies.
-- Graphql-codegen is set up to generate types for the subgraph. You can use the generated code to query the subgraph, located in `lib/client.ts`.
-- You are allowed to use any framework (ex. Next.js, Remix, or client-side routing) you want.
-- Use `wagmi` for blockchain interactions.
-- You can add more packages as you wish. However, we recommend keeping the number of dependencies to a minimum.
-- Review the code to ensure it meets all requirements.
+## Instructions
+- Use any front-end framework you want. At Treasure, we use [Next.js](https://nextjs.org)/[Remix](http://remix.run) and [Tailwind CSS](https://tailwindcss.com).
+- Use any wallet connection/Web3 framework you want. At Treasure, we use [ConnectKit](https://github.com/family/connectkit)/[RainbowKit](https://www.rainbowkit.com) and [wagmi](https://wagmi.sh).
+- Inventory Page should pull data from the [Cryptopunks subgraph](https://thegraph.com/explorer/subgraphs/YqMJatbgbqy1GodtbYZv4U9NzyaScCgSF7CAE5ivAM7?view=Playground&chain=mainnet). Please create an account at The Graph and obtain your own API key to use in the `.env` file.
+- Details Page should pull data directly from the [Cryptopunks smart contract](https://etherscan.io/address/0x16F5A35647D6F03D5D3da7b35409D65ba03aF3B2).
 - Optimize the code for readability and performance.
 - Feel free to add comments to explain your thought process.
-- Once you are done, please send us a link to your repo.
+- When done, please send us a link to your repository.

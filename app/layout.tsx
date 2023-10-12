@@ -1,3 +1,4 @@
+import "./globals.css";
 export default function RootLayout({
   children,
 }: {
@@ -5,6 +6,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
+        <title>Cryptopunks explorer</title>
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "codegen": "node -r dotenv/config node_modules/.bin/gql-gen"
+    "codegen": "node -r dotenv/config node_modules/.bin/gql-gen",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +17,7 @@
     "graphql": "^16.6.0",
     "graphql-request": "^6.0.0",
     "graphql-tag": "^2.12.6",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "wagmi": "^0.12.13"
@@ -23,7 +28,8 @@
     "@graphql-codegen/typescript-graphql-request": "^4.5.9",
     "@graphql-codegen/typescript-operations": "^3.0.4",
     "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4"
+    "@types/react-dom": "^18.2.4",
+    "typescript": "5.2.2"
   },
   "engines": {
     "node": ">=14"

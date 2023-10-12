@@ -1,8 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
+/**
+ * A component that renders a welcome screen, allowing the user to connect their wallet or manually type one
+ */
 const Welcome = () => {
+  const [walletAddress, setWalletAddress] = useState("");
+  const router = useRouter();
+  const onSearch = () => {
+    router.push(`/explore/${walletAddress}`);
+  };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <motion.h1
@@ -32,8 +42,12 @@ const Welcome = () => {
           type="text"
           placeholder="Enter Wallet Address"
           className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none"
+          onChange={(e) => setWalletAddress(e.target.value)}
         />
-        <button className="mt-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none">
+        <button
+          className="mt-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none"
+          onClick={onSearch}
+        >
           Search Inventory
         </button>
       </motion.div>

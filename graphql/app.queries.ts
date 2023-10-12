@@ -5,10 +5,23 @@ export const hello = gql`
     punks(where: { owner: $address }) {
       id
       tokenId
-      transferedTo {
+    }
+  }
+  query GetPunkDetails($punkId: ID!) {
+    punk(id: $punkId) {
+      id
+      tokenId
+      currentAsk {
         id
+        amount
       }
-      assignedTo {
+      currentBid {
+        id
+        amount
+      }
+      numberOfSales
+      numberOfTransfers
+      owner {
         id
       }
       purchasedBy {

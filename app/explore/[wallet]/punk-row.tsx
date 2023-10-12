@@ -20,7 +20,7 @@ const PunkRow = ({ tokenId }: PunkRowProps) => {
       <td>{tokenId}</td>
       <td>
         <a
-          href={`/explore/${tokenId}`}
+          href={`/details/${tokenId}`}
           className="text-blue-500 hover:underline"
         >
           Explore

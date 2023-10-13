@@ -1,5 +1,5 @@
 import client from "../../../lib/client";
-import DisconnectButton from "./disconnect-button";
+import GoBackButton from "./go-back-button";
 import PunkRow from "./punk-row";
 
 interface ExplorerProps {
@@ -37,6 +37,8 @@ const Explorer = async ({ params: { wallet } }: ExplorerProps) => {
         <div className="bg-white rounded-lg shadow p-4">
           <h3 className="text-lg font-semibold mb-4">No punks 😔</h3>
         </div>
+
+        <GoBackButton />
       </div>
     );
   }
@@ -59,7 +61,7 @@ const Explorer = async ({ params: { wallet } }: ExplorerProps) => {
           </tbody>
         </table>
       </div>
-      <DisconnectButton />
+      <GoBackButton />
     </div>
   );
 };

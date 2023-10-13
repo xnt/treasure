@@ -14,6 +14,7 @@ type PunkDetails = {
   imageData: string;
 };
 
+// Get punk details (attributes and image data) from the contract
 const getPunkDetails = async (punkId: string) => {
   try {
     const PUNK_DETAILS_ADDRESS =

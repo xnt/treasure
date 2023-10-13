@@ -20,7 +20,7 @@ const getPunks = async (wallet: string) => {
     });
     return punks;
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return [];
   }
 };

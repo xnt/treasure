@@ -21,7 +21,7 @@ const Welcome = () => {
       toChecksumAddress(walletAddress);
       router.push(`/explore/${walletAddress}`);
     } catch (e) {
-      console.log(e);
+      console.error(e);
       setAddressError("Invalid address");
     }
   };

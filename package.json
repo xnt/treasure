@@ -20,7 +20,7 @@
     "encoding": "^0.1.13",
     "framer-motion": "^10.16.4",
     "graphql": "^16.6.0",
-    "graphql-request": "^6.0.0",
+    "graphql-request": "5.1.0",
     "graphql-tag": "^2.12.6",
     "lokijs": "^1.5.12",
     "next": "^13.5.4",

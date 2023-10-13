@@ -2,8 +2,7 @@ import Web3 from "web3";
 import GoBack from "./go-back";
 import PunkImage from "./punk-image";
 import punkDataAbi from "./punk-data.abi";
-const PUNK_DETAILS_ADDRESS = "0x16F5A35647D6F03D5D3da7b35409D65ba03aF3B2";
-const INFURA_API_URL = process.env.INFURA_API_URL;
+
 interface PunkDetailsPageProps {
   params: {
     punkId: string;
@@ -17,6 +16,9 @@ type PunkDetails = {
 
 const getPunkDetails = async (punkId: string) => {
   try {
+    const PUNK_DETAILS_ADDRESS =
+      "0x16F5A35647D6F03D5D3da7b35409D65ba03aF3B2" as const;
+    const INFURA_API_URL = process.env.INFURA_API_URL;
     const web3 = new Web3(INFURA_API_URL);
     const contract = new web3.eth.Contract(punkDataAbi, PUNK_DETAILS_ADDRESS);
     const attributes = (await contract.methods
